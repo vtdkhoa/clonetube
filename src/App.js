@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import HeaderNav from './containers/HeaderNav/HeaderNav'
+import SideBar from './containers/SideBar/SideBar'
 
 class App extends Component {
   render() {
     return(
-      <HeaderNav/>
+      <Fragment>
+        <HeaderNav/>
+        <SideBar/>
+      </Fragment>
     )
   }
 }
