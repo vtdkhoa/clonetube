@@ -13,8 +13,8 @@ const Subscription = props => {
   }
 
   return (
-    <Menu.Item>
-      <div class="subscription">
+    <Menu.Item className="subscription-item">
+      <div className="subscription">
         <div>
           <Image src="http://via.placeholder.com/28x28" avatar/>
           <span>{props.label}</span>
