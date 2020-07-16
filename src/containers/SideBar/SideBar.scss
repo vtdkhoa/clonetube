@@ -6,7 +6,8 @@
   overflow-y: auto;
   padding-bottom: $header-nav-height;
 
-  .sidebar-item:hover {
+  .sidebar-item:hover,
+  .subscription-item:hover {
     background: #ebebeb;
     cursor: pointer;
   }

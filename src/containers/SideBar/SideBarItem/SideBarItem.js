@@ -4,6 +4,7 @@ import './SideBarItem.scss'
 
 const SideBarItem = props => {
   const highlight = props.highlight ? 'highlight-item' : null
+
   return (
     <Menu.Item className={['sidebar-item', highlight].join(' ')}>
       <div className="sidebar-item-alignment-container">

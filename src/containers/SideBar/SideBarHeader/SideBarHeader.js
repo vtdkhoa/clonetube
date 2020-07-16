@@ -4,6 +4,7 @@ import './SideBarHeader.scss'
 
 const SideBarHeader = props => {
   const heading = props.title ? props.title.toUpperCase() : ''
+
   return (
     <Menu.Item>
       <Menu.Header className="side-bar-header">
