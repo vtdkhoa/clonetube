@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoInfoBox renders collapsed 1`] = `
+<Fragment>
+  <div
+    className="video-info-box"
+  >
+    <Image
+      as="img"
+      circular={true}
+      className="channel-image"
+      src="http://via.placeholder.com/48x48"
+      ui={true}
+    />
+    <div
+      className="video-info"
+    >
+      <div
+        className="channel-name"
+      >
+        Channel Name
+      </div>
+      <div
+        className="video-publication-date"
+      >
+        Sat, Jul 18 2020
+      </div>
+    </div>
+    <Button
+      as="button"
+      color="youtube"
+    >
+      10K Subscribe
+    </Button>
+    <div
+      className="video-description"
+    >
+      <div
+        className="collapsed"
+      >
+        <div>
+          <p>
+            Para 1
+          </p>
+          <p>
+            Para 2
+          </p>
+          <p>
+            Para 3
+          </p>
+          <p>
+            Para 4
+          </p>
+          <p>
+            Para 5
+          </p>
+        </div>
+      </div>
+      <Button
+        as="button"
+        compact={true}
+        onClick={[Function]}
+      >
+        Show More
+      </Button>
+    </div>
+  </div>
+  <Divider />
+</Fragment>
+`;
+
+exports[`VideoInfoBox renders expanded 1`] = `
+<Fragment>
+  <div
+    className="video-info-box"
+  >
+    <Image
+      as="img"
+      circular={true}
+      className="channel-image"
+      src="http://via.placeholder.com/48x48"
+      ui={true}
+    />
+    <div
+      className="video-info"
+    >
+      <div
+        className="channel-name"
+      >
+        Channel Name
+      </div>
+      <div
+        className="video-publication-date"
+      >
+        Sat, Jul 18 2020
+      </div>
+    </div>
+    <Button
+      as="button"
+      color="youtube"
+    >
+      10K Subscribe
+    </Button>
+    <div
+      className="video-description"
+    >
+      <div
+        className="expanded"
+      >
+        <div>
+          <p>
+            Para 1
+          </p>
+          <p>
+            Para 2
+          </p>
+          <p>
+            Para 3
+          </p>
+          <p>
+            Para 4
+          </p>
+          <p>
+            Para 5
+          </p>
+        </div>
+      </div>
+      <Button
+        as="button"
+        compact={true}
+        onClick={[Function]}
+      >
+        Show Less
+      </Button>
+    </div>
+  </div>
+  <Divider />
+</Fragment>
+`;

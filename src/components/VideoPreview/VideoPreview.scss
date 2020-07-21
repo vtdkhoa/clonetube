@@ -1,8 +1,20 @@
 @import '../../styles/shared.scss';
 
 .video-preview {
+  /* vertical */
   display: grid;
   grid: 118px auto / 210px;
+
+  /* horizontal */
+  &.horizontal {
+    grid: auto / 210px auto;
+    grid-column-gap: 4px;
+
+    .video-info {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+  }
 }
 
 .image-container {
