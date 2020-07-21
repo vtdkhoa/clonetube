@@ -10,7 +10,7 @@ describe('VideoMetadata', () => {
 
   test('renders with view count', () => {
     const wrapper = shallow(
-      <VideoMetadata viewCount={12345}/>
+      <VideoMetadata viewCount={100234}/>
     )
     expect(wrapper).toMatchSnapshot()
   })
