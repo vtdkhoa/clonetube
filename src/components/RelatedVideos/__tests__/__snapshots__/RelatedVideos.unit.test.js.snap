@@ -4,6 +4,7 @@ exports[`RelatedVideos renders 1`] = `
 <div
   className="related-videos"
 >
+  <NextUpVideo />
   <VideoPreview
     horizontal={true}
   />

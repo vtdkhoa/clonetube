@@ -6,19 +6,17 @@ const BASE_EMBED_URL = 'https://www.youtube.com/embed/'
 const Video = props => {
   if (!props.id) return null
 
-  const embedUrl = `${BASE_EMBED_URL}${props.id}?autoplay=1`
+  const embedUrl = `${BASE_EMBED_URL}${props.id}`
 
   return (
     <div className="video-container">
       <div className="video">
       <iframe
         className="video-player"
-        title={`${props.id}`}
-        width={'560'}
-        height={'315'}
+        title="video"
         src={embedUrl}
         frameBorder='0'
-        allow='autoplay; encrypted-media'
+        allow="autoplay; encrypted-media"
         allowFullScreen
       />
       </div>
