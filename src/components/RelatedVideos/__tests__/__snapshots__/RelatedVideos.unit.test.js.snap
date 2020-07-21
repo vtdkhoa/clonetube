@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedVideos renders 1`] = `
+<div
+  className="related-videos"
+>
+  <VideoPreview
+    horizontal={true}
+  />
+  <VideoPreview
+    horizontal={true}
+  />
+  <VideoPreview
+    horizontal={true}
+  />
+</div>
+`;
