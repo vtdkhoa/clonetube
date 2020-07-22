@@ -1,1 +1,4 @@
 export const YOUTUBE_LIBRARY_LOADED = 'YOUTUBE_LIBRARY_LOADED'
+export const REQUEST = 'REQUEST'
+export const SUCCESS = 'SUCCESS'
+export const FAILURE = 'FAILURE'
