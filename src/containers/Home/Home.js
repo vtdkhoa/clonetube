@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import VideoGrid from '../../components/VideoGrid/VideoGrid'
+import HomeContent from './HomeContent/HomeContent'
 import SideBar from '../SideBar/SideBar'
 import './Home.scss'
 
@@ -8,12 +8,7 @@ class Home extends Component {
     return (
       <Fragment>
         <SideBar/>
-        <div className="home">
-          <div className="responsive-video-grid-container">
-            <VideoGrid title="Trending"/>
-            <VideoGrid title="Autos & Vehicles" hideDivider={true}/>
-          </div>
-        </div>
+        <HomeContent/>
       </Fragment>
     )
   }
