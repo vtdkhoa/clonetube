@@ -11,7 +11,7 @@ exports[`VideoMetadata renders with view count 1`] = `
     className="video-stats"
   >
     <span>
-      100,234
+      100.234
        views
     </span>
     <div
