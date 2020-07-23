@@ -1,0 +1,62 @@
+{
+  "mostPopular": {
+    "items": [
+      "9lT6ABDj32I",
+      "G0JKdFjWkLA"
+    ],
+    "totalResults": 200,
+    "nextPageToken": "CAwQAA"
+  },
+  "byId": {
+    "9lT6ABDj32I": {
+      "id": "9lT6ABDj32I",
+      "snippet": {
+        "publishedAt": "2020-07-21T19:00:26Z",
+        "channelId": "UCucot-Zp428OwkyRm2I7v2Q",
+        "title": "Beauty Battle ft. Charli & Dixie D'Amelio",
+        "thumbnails": {
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9lT6ABDj32I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
+        },
+        "channelTitle": "James Charles",
+        "localized": {
+          "title": "Beauty Battle ft. Charli & Dixie D'Amelio"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT10M33S"
+      },
+      "statistics": {
+        "viewCount": "9292721"
+      }
+    },
+    "G0JKdFjWkLA": {
+      "id": "G0JKdFjWkLA",
+      "snippet": {
+        "publishedAt": "2020-07-22T16:00:05Z",
+        "channelId": "UCF_fDSgPpBQuh1MsUTgIARQ",
+        "title": "The Weeknd - Snowchild (Official Video)",
+        "thumbnails": {
+          "medium": {
+            "url": "https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
+        },
+        "channelTitle": "TheWeekndVEVO",
+        "localized": {
+          "title": "The Weeknd - Snowchild (Official Video)"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT4M12S"
+      },
+      "statistics": {
+        "viewCount": "1523688"
+      }
+    }
+  }
+}
