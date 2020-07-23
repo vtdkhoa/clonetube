@@ -5,9 +5,9 @@ export const createRequestTypes = base => {
     throw new Error('Cannot create request type with base = \'\' or base = null')
   }
 
-  return [types.REQUEST, types.SUCCESS, types.FAILURE].reduce((acc, type) => {
-    acc[type] = `${base}_${type}`
-    return acc
+  return [types.REQUEST, types.SUCCESS, types.FAILURE].reduce((accumulator, type) => {
+    accumulator[type] = `${base}_${type}`
+    return accumulator
   }, {})
 }
 
