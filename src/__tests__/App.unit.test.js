@@ -11,7 +11,9 @@ const store = mockStore(initialState)
 
 describe('App', () => {
   test('renders', () => {
-    const wrapper = shallow(<App store={store}/>)
+    const wrapper = shallow(
+      <App store={store}/>
+    )
     expect(wrapper).toMatchSnapshot()
   })
 })
