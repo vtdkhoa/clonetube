@@ -38,10 +38,8 @@ const createResource = properties => {
 
   for (let p in properties) {
     let value = properties[p]
-
     if (p && p.substr(-2, 2) === '[]') {
       let adjustedName = p.replace('[]', '')
-
       if (value) {
         normalizedProps[adjustedName] = value.split(',')
       }
@@ -54,10 +52,8 @@ const createResource = properties => {
     if (normalizedProps.hasOwnProperty(prop) && normalizedProps[prop]) {
       let propArray = prop.split('.')
       let ref = resource
-
       for (let pa = 0; pa < propArray.length; pa++) {
         let key = propArray[pa]
-
         if (pa === propArray.length - 1) {
           ref[key] = normalizedProps[prop]
         } else {
