@@ -1,7 +1,4 @@
-import * as actions from '.'
-import * as types from '../constants'
+import { createAction } from '.'
+import { YOUTUBE_LIBRARY_LOADED } from '../constants'
 
-export const youtubeLibraryLoaded = actions.createAction.bind(
-  null,
-  types.YOUTUBE_LIBRARY_LOADED
-)
+export const youtubeLibraryLoaded = createAction.bind(null, YOUTUBE_LIBRARY_LOADED)
