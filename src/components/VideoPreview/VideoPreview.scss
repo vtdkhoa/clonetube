@@ -17,6 +17,10 @@
   }
 }
 
+.video-preview:hover {
+  cursor: pointer;
+}
+
 .image-container {
   position: relative;
   grid-row: 1 / 2;
