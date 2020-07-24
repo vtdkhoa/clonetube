@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
 import { Image } from 'semantic-ui-react'
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+import { formatNumber } from '../../services/number/number-format'
+import { formatVideoDuration } from '../../services/time/time-format'
 import './VideoPreview.scss'
+
+TimeAgo.locale(en)
+const timeAgo = new TimeAgo('en-US')
 
 class VideoPreview extends Component {
   render() {
     const { video } = this.props
     const horizontal = this.props.horizontal ? 'horizontal' : null
+    const viewCountAndTimeString = VideoPreview.getFormattedViewAndTime(video)
+    const duration = video.contentDetails ? video.contentDetails.duration : null
+    const videoDuration = formatVideoDuration(duration)
 
     if (!video) {
       return <div/>
@@ -16,7 +26,7 @@ class VideoPreview extends Component {
         <div className="image-container">
           <Image src={video.snippet.thumbnails.medium.url}/>
           <div className="time-label">
-            <span>{video.contentDetails.duration}</span>
+            <span>{videoDuration}</span>
           </div>
         </div>
         <div className="video-info">
@@ -24,12 +34,24 @@ class VideoPreview extends Component {
           <div className="video-preview-metadata-container">
             <div className="channel-title">{video.snippet.channelTitle}</div>
             <div>
-              <span>{video.statistics.viewCount} views • {video.snippet.publishedAt}</span>
+              <span>{viewCountAndTimeString}</span>
             </div>
           </div>
         </div>
       </div>
     )
+  }
+
+  static getFormattedViewAndTime(video) {
+    const publicationDate = new Date(video.snippet.publishedAt)
+    const videoViewCount = video.statistics ? video.statistics.viewCount : null
+
+    if (videoViewCount) {
+      const videoViewCountShort = formatNumber(video.statistics.viewCount)
+      return `${videoViewCountShort} views • ${timeAgo.format(publicationDate)}`
+    }
+
+    return ''
   }
 }
 
