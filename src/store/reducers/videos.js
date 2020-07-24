@@ -36,7 +36,10 @@ function reduceFetchMostPopularVideos(response, prevState) {
   return {
     ...prevState,
     mostPopular,
-    byId: { ...prevState.byId, ...videoMap }
+    byId: {
+      ...prevState.byId,
+      ...videoMap
+    }
   }
 }
 
