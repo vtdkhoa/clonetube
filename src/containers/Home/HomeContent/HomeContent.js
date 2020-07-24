@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import VideoGrid from '../../../components/VideoGrid/VideoGrid'
 import { getMostPopularVideos } from '../../../store/reducers/videos'
 import { connect } from 'react-redux'
-import { AMOUNT_TRENDING_VIDEOS } from '../../../store/constants'
 import './HomeContent.scss'
+
+const AMOUNT_TRENDING_VIDEOS = 12
 
 class HomeContent extends Component {
   getTrendingVideos() {
