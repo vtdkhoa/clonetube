@@ -6,7 +6,8 @@ import mostPopularSuccessState from './states/MOST_POPULAR_SUCCESS'
 
 const initialState = {
   byId: {},
-  mostPopular: {}
+  mostPopular: {},
+  categories: {}
 }
 
 describe('videos reducer', () => {

@@ -18,7 +18,7 @@ const VideoGrid = props => {
 
   return (
     <Fragment>
-      <VideoGridHeader title="Trending"/>
+      <VideoGridHeader title={props.title}/>
       <div className="video-grid">
         {gridItems}
       </div>
