@@ -66,7 +66,7 @@ const createResource = properties => {
   return resource
 }
 
-export function buildMostPopularVideosRequest(amount = 12, loadDescription = false, nextPageToken) {
+export function buildMostPopularVideosRequest(amount = 12, loadDescription = false, nextPageToken, videoCategoryId = null) {
   let fields = 'nextPageToken,prevPageToken,items(contentDetails/duration,id,snippet(channelId,channelTitle,localized/title,publishedAt,thumbnails/medium,title),statistics/viewCount),pageInfo(totalResults)'
   if (loadDescription) {
     fields += ',items/snippet/description'
@@ -80,7 +80,18 @@ export function buildMostPopularVideosRequest(amount = 12, loadDescription = fal
       maxResults: amount,
       regionCode: 'US',
       pageToken: nextPageToken,
-      fields
+      fields,
+      videoCategoryId
+    }, null
+  )
+}
+
+export function buildVideoCategoriesRequest() {
+  return buildApiRequest('GET',
+    '/youtube/v3/videoCategories',
+    {
+      'part': 'snippet',
+      'regionCode': 'US',
     }, null
   )
 }
