@@ -163,3 +163,19 @@ export const getVideosByCategory = createSelector(
     }, {})
   }
 )
+
+// Note: I only want to show the spinner when we are actually loading more data and not on the initial fetch
+// Note: Therefore, I just create 2 new selectors
+export const videoCategoriesLoaded = createSelector(
+  state => state.videos.categories,
+  categories => {
+    return Object.keys(categories || {}).length !== 0
+  }
+) // => Returns true, if I have some entries in video.categories object
+
+export const videosByCategoryLoaded = createSelector(
+  state => state.videos.byCategory,
+  videosByCategory => {
+    return Object.keys(videosByCategory || {}).length
+  }
+) // => Returns true, if I have some entries in videos.categories object, i.e. if I have already loaded some videos for a specific category
