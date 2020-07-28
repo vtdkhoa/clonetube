@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import VideoGrid from '../../../components/VideoGrid/VideoGrid'
+import InfiniteScroll from '../../../components/InfiniteScroll/InfiniteScroll'
 import { getMostPopularVideos, getVideosByCategory } from '../../../store/reducers/videos'
 import { connect } from 'react-redux'
 import './HomeContent.scss'
@@ -35,8 +36,13 @@ class HomeContent extends Component {
     return (
       <div className="home-content">
         <div className="responsive-video-grid-container">
-          <VideoGrid title="Trending" videos={trendingVideos}/>
-          {categoryGrids}
+          <InfiniteScroll
+            bottomReachedCallback={this.props.bottomReachedCallback}
+            showLoader={this.props.showLoader}
+          >
+            <VideoGrid title="Trending" videos={trendingVideos}/>
+            {categoryGrids}
+          </InfiniteScroll>
         </div>
       </div>
     )
