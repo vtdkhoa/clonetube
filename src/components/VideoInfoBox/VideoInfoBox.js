@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Image, Button, Divider } from 'semantic-ui-react'
+import Linkify from 'react-linkify'
+import { formatPublishedAtDateString } from '../../services/date/date-format'
 import './VideoInfoBox.scss'
 
 class VideoInfoBox extends Component {
@@ -18,23 +20,45 @@ class VideoInfoBox extends Component {
     })
   }
 
-  render() {
+  getVideoDescriptions() {
+    const { snippet } = this.props.video
+    const videoDescription = snippet ? snippet.description : null
+
+    if (!videoDescription) {
+      return null
+    }
+    return videoDescription.split('\n').map((paragraph, index) =>
+      <p key={index}>
+        <Linkify>{paragraph}</Linkify>
+      </p>
+    )
+  }
+
+  getDescriptionConfig() {
     let descriptionTextClass = 'collapsed'
     let buttonTitle = 'Show More'
-    let descriptionParagraphs = (
-      <div>
-        <p>Para 1</p>
-        <p>Para 2</p>
-        <p>Para 3</p>
-        <p>Para 4</p>
-        <p>Para 5</p>
-      </div>
-    )
 
     if (!this.state.collapsed) {
       descriptionTextClass = 'expanded'
       buttonTitle = 'Show Less'
     }
+
+    return {
+      descriptionTextClass,
+      buttonTitle
+    }
+  }
+
+  render() {
+    const { video } = this.props
+
+    if (!video) {
+      return <div/>
+    }
+
+    const descriptionParagraphs = this.getVideoDescriptions()
+    const { buttonTitle, descriptionTextClass } = this.getDescriptionConfig()
+    const formattedPublishedAt = formatPublishedAtDateString(video.snippet.publishedAt)
 
     return (
       <Fragment>
@@ -46,9 +70,14 @@ class VideoInfoBox extends Component {
           />
           <div className="video-info">
             <div className="channel-name">Channel Name</div>
-            <div className="video-publication-date">Sat, Jul 18 2020</div>
+            <div className="video-publication-date">
+              {formattedPublishedAt}
+            </div>
           </div>
-          <Button color="youtube">10K Subscribe</Button>
+          <Button
+            className="subscribe"
+            color="youtube"
+          >10k subscribe</Button>
           <div className="video-description">
             <div className={descriptionTextClass}>
               {descriptionParagraphs}

@@ -13,7 +13,9 @@ const NextUpVideo = props => {
           <Checkbox toggle defaultChecked/>
         </div>
       </div>
-      <VideoPreview horizontal={true}/>
+      <VideoPreview
+        horizontal={true}
+      />
       <Divider/>
     </Fragment>
   )

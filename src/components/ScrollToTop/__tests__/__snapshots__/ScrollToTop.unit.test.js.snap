@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollToTop renders with children props 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`ScrollToTop renders without children props 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

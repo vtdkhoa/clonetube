@@ -4,19 +4,19 @@ import { shallow } from 'enzyme'
 
 const mockUpVideoProps = {
   snippet: {
-    publishedAt: "published at",
-    title: "title",
+    publishedAt: "2020-07-22T16:00:05Z",
+    title: "The Weeknd - Snowchild (Official Video)",
     thumbnails: {
       medium: {
-        url: "url",
+        url: "https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg",
       }
     },
-    channelTitle: "channel title",
+    channelTitle: "TheWeekndVEVO",
     contentDetails: {
-      duration: "duration"
+      duration: "PT4M12S"
     },
     statistics: {
-      viewCount: "view count"
+      viewCount: "1523688"
     }
   }
 }
