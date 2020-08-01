@@ -20,12 +20,14 @@ class HomeContent extends Component {
       // the last video grid element should not have a divider
       const hideDivider = index === categoryTitles.length - 1
 
-      return <VideoGrid
-        title={categoryTitle}
-        videos={videos}
-        key={categoryTitle}
-        hideDivider={hideDivider}
-      />
+      return (
+        <VideoGrid
+          title={categoryTitle}
+          videos={videos}
+          key={categoryTitle}
+          hideDivider={hideDivider}
+        />
+      )
     })
   }
 

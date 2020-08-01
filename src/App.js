@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AppLayout from './components/AppLayout/AppLayout'
 import Home from './containers/Home/Home'
 import Watch from './containers/Watch/Watch'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { youtubeLibraryLoaded } from './store/actions/api'
@@ -47,4 +47,4 @@ const mapDispatchToProps = dispatch => {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(App)
+export default withRouter(connect(null, mapDispatchToProps)(App))

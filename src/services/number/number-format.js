@@ -8,6 +8,7 @@ const UNITS = ['K', 'M', 'B', 'T']
 
 /**
  * @param {string} number
+ * @returns number => string
  */
 export function formatNumber(number) {
   const showDecimalPlace = UNITS.some((element, index) => {
@@ -19,7 +20,6 @@ export function formatNumber(number) {
 
   for (let i = UNITS.length - 1; i >= 0; i--) {
     const decimal = Math.pow(1000, i + 1)
-
     if (number >= decimal) {
       return (number / decimal).toFixed(digits) + UNITS[i]
     }

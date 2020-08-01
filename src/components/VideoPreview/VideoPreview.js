@@ -12,14 +12,15 @@ const timeAgo = new TimeAgo('en-US')
 class VideoPreview extends Component {
   render() {
     const { video } = this.props
-    const horizontal = this.props.horizontal ? 'horizontal' : null
-    const viewCountAndTimeString = VideoPreview.getFormattedViewAndTime(video)
-    const duration = video.contentDetails ? video.contentDetails.duration : null
-    const videoDuration = formatVideoDuration(duration)
 
     if (!video) {
       return <div/>
     }
+
+    const horizontal = this.props.horizontal ? 'horizontal' : null
+    const viewCountAndTimeString = VideoPreview.getFormattedViewAndTime(video)
+    const duration = video.contentDetails ? video.contentDetails.duration : null
+    const videoDuration = formatVideoDuration(duration)
 
     return (
       <div className={["video-preview", horizontal].join(' ')}>

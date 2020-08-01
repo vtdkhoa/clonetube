@@ -90,8 +90,31 @@ export function buildVideoCategoriesRequest() {
   return buildApiRequest('GET',
     '/youtube/v3/videoCategories',
     {
-      'part': 'snippet',
-      'regionCode': 'US',
+      part: 'snippet',
+      regionCode: 'US',
+    }, null
+  )
+}
+
+export function buildVideoDetailRequest(videoId) {
+  return buildApiRequest('GET',
+    '/youtube/v3/videos',
+    {
+      part: 'snippet,statistics,contentDetails',
+      id: videoId,
+      fields: 'kind,items(contentDetails/duration,id,snippet(channelId,channelTitle,description,publishedAt,thumbnails/medium,title),statistics)'
+    }, null
+  )
+}
+
+export function buildRelatedVideosRequest(videoId, amount = 12) {
+  return buildApiRequest('GET',
+    '/youtube/v3/search',
+    {
+      part: 'snippet',
+      type: 'video',
+      maxResults: amount,
+      relatedToVideoID: videoId
     }, null
   )
 }
