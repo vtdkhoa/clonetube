@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Image, Button, Divider } from 'semantic-ui-react'
 import Linkify from 'react-linkify'
 import { formatPublishedAtDateString } from '../../services/date/date-format'
+import { formatNumber } from '../../services/number/number-format'
 import './VideoInfoBox.scss'
 
 class VideoInfoBox extends Component {
@@ -49,27 +50,37 @@ class VideoInfoBox extends Component {
     }
   }
 
-  render() {
-    const { video } = this.props
+  getSubscribeButtonText() {
+    const { channel } = this.props
+    const parsedSubscriberCount = Number(channel.statistics.subscriberCount)
+    const subscriberCount = formatNumber(parsedSubscriberCount)
+    return `Subscribe ${subscriberCount}`
+  }
 
-    if (!video) {
+  render() {
+    const { video, channel } = this.props
+
+    if (!video || !channel) {
       return <div/>
     }
 
     const descriptionParagraphs = this.getVideoDescriptions()
     const { buttonTitle, descriptionTextClass } = this.getDescriptionConfig()
     const formattedPublishedAt = formatPublishedAtDateString(video.snippet.publishedAt)
+    const buttonText = this.getSubscribeButtonText()
+    const channelThumbnail = channel.snippet.thumbnails.medium.url
+    const channelName = channel.snippet.title
 
     return (
       <Fragment>
         <div className="video-info-box">
           <Image
             className="channel-image"
-            src="http://via.placeholder.com/48x48"
+            src={channelThumbnail}
             circular
           />
           <div className="video-info">
-            <div className="channel-name">Channel Name</div>
+            <div className="channel-name">{channelName}</div>
             <div className="video-publication-date">
               {formattedPublishedAt}
             </div>
@@ -77,7 +88,7 @@ class VideoInfoBox extends Component {
           <Button
             className="subscribe"
             color="youtube"
-          >10k subscribe</Button>
+          >{buttonText}</Button>
           <div className="video-description">
             <div className={descriptionTextClass}>
               {descriptionParagraphs}

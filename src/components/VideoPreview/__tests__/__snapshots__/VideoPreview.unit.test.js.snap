@@ -1,127 +1,154 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VideoPreview renders horizontally 1`] = `
-<div
-  className="video-preview horizontal"
+<Link
+  to={
+    Object {
+      "pathname": undefined,
+      "search": undefined,
+    }
+  }
 >
   <div
-    className="image-container"
-  >
-    <Image
-      as="img"
-      src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
-      ui={true}
-    />
-    <div
-      className="time-label"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="video-info"
+    className="video-preview horizontal"
   >
     <div
-      className="semi-bold show-max-two-lines"
+      className="image-container"
     >
-      The Weeknd - Snowchild (Official Video)
-    </div>
-    <div
-      className="video-preview-metadata-container"
-    >
+      <Image
+        as="img"
+        src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
+        ui={true}
+      />
       <div
-        className="channel-title"
+        className="time-label"
       >
-        TheWeekndVEVO
-      </div>
-      <div>
         <span />
       </div>
     </div>
+    <div
+      className="video-info"
+    >
+      <div
+        className="semi-bold show-max-two-lines"
+      >
+        The Weeknd - Snowchild (Official Video)
+      </div>
+      <div
+        className="video-preview-metadata-container"
+      >
+        <div
+          className="channel-title"
+        >
+          TheWeekndVEVO
+        </div>
+        <div>
+          <span />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</Link>
 `;
 
 exports[`VideoPreview renders vertically 1`] = `
-<div
-  className="video-preview "
+<Link
+  to={
+    Object {
+      "pathname": undefined,
+      "search": undefined,
+    }
+  }
 >
   <div
-    className="image-container"
-  >
-    <Image
-      as="img"
-      src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
-      ui={true}
-    />
-    <div
-      className="time-label"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="video-info"
+    className="video-preview "
   >
     <div
-      className="semi-bold show-max-two-lines"
+      className="image-container"
     >
-      The Weeknd - Snowchild (Official Video)
-    </div>
-    <div
-      className="video-preview-metadata-container"
-    >
+      <Image
+        as="img"
+        src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
+        ui={true}
+      />
       <div
-        className="channel-title"
+        className="time-label"
       >
-        TheWeekndVEVO
-      </div>
-      <div>
         <span />
       </div>
     </div>
+    <div
+      className="video-info"
+    >
+      <div
+        className="semi-bold show-max-two-lines"
+      >
+        The Weeknd - Snowchild (Official Video)
+      </div>
+      <div
+        className="video-preview-metadata-container"
+      >
+        <div
+          className="channel-title"
+        >
+          TheWeekndVEVO
+        </div>
+        <div>
+          <span />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</Link>
 `;
 
 exports[`VideoPreview renders with props video = {} 1`] = `
-<div
-  className="video-preview "
+<Link
+  to={
+    Object {
+      "pathname": undefined,
+      "search": undefined,
+    }
+  }
 >
   <div
-    className="image-container"
-  >
-    <Image
-      as="img"
-      src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
-      ui={true}
-    />
-    <div
-      className="time-label"
-    >
-      <span />
-    </div>
-  </div>
-  <div
-    className="video-info"
+    className="video-preview "
   >
     <div
-      className="semi-bold show-max-two-lines"
+      className="image-container"
     >
-      The Weeknd - Snowchild (Official Video)
-    </div>
-    <div
-      className="video-preview-metadata-container"
-    >
+      <Image
+        as="img"
+        src="https://i.ytimg.com/vi/G0JKdFjWkLA/mqdefault.jpg"
+        ui={true}
+      />
       <div
-        className="channel-title"
+        className="time-label"
       >
-        TheWeekndVEVO
-      </div>
-      <div>
         <span />
       </div>
     </div>
+    <div
+      className="video-info"
+    >
+      <div
+        className="semi-bold show-max-two-lines"
+      >
+        The Weeknd - Snowchild (Official Video)
+      </div>
+      <div
+        className="video-preview-metadata-container"
+      >
+        <div
+          className="channel-title"
+        >
+          TheWeekndVEVO
+        </div>
+        <div>
+          <span />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</Link>
 `;

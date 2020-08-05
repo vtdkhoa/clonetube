@@ -3,6 +3,7 @@ import { WATCH_DETAILS, VIDEO_DETAILS } from '../actions/watch'
 import { SUCCESS } from '../constants'
 import { VIDEO_LIST_RESPONSE, SEARCH_LIST_RESPONSE } from '../api/youtube-response-types'
 import { createSelector } from 'reselect'
+import { getSearchParam } from '../../services/url'
 
 const initialState = {
   byId: {},
@@ -167,7 +168,7 @@ function reduceRelatedVideosRequest(responses) {
     res => res.result.kind === SEARCH_LIST_RESPONSE
   )
   const { pageInfo, items, nextPageToken } = relatedVideosResponse.result
-  const relatedVideoIds = items.map(video => video.id)
+  const relatedVideoIds = items.map(video => video.id.videoId)
 
   return {
     totalResults: pageInfo.totalResults,
@@ -266,17 +267,21 @@ export const getRelatedVideos = createSelector(
   getRelatedVideoIds,
   state => state.videos.byId,
   (relatedVideoIds, videos) => {
-    let convertedVideos = [videos]
     if (relatedVideoIds) {
-      // filter kicks out null values we might have
-      // return relatedVideoIds
-      //   .map(videoId => videos[videoId])
-      //   .filter(video => video)
-      let test = relatedVideoIds
-        // .map(videoId => videos[videoId])
-        .map(videoId => convertedVideos[videoId])
-      console.log(test)
+      return relatedVideoIds
+        .map(videoId => videos[videoId])
+        .filter(video => video) // => filter kicks out null values
     }
     return []
   }
 )
+
+export const getChannelId = (state, location, name) => {
+  const videoId = getSearchParam(location, name)
+  const video = state.videos.byId[videoId]
+  if (video) {
+    return video.snippet.channelId
+  } else {
+    return null
+  }
+}

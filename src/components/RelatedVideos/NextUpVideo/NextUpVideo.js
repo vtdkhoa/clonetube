@@ -14,6 +14,9 @@ const NextUpVideo = props => {
         </div>
       </div>
       <VideoPreview
+        video={props.video}
+        pathname="/watch"
+        search={`?v=${props.video.id}`}
         horizontal={true}
       />
       <Divider/>
