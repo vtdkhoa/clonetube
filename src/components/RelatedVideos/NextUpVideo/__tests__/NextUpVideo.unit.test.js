@@ -4,7 +4,12 @@ import { shallow } from 'enzyme'
 
 describe('NextUpVideo', () => {
   test('renders', () => {
-    const wrapper = shallow(<NextUpVideo/>)
+    const video = {
+      id: 'some-id'
+    }
+    const wrapper = shallow(
+      <NextUpVideo video={video}/>
+    )
     expect(wrapper).toMatchSnapshot()
   })
 })

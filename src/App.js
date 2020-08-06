@@ -34,7 +34,7 @@ class App extends Component {
       <AppLayout>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/watch" component={Watch}></Route>
+          <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}></Route>
         </Switch>
       </AppLayout>
     )

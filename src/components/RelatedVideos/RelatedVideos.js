@@ -4,7 +4,7 @@ import NextUpVideo from './NextUpVideo/NextUpVideo'
 import './RelatedVideos.scss'
 
 const RelatedVideos = props => {
-  if (!props.videos && !props.videos.length) {
+  if (!props.videos || !props.videos.length) {
     return <div className="related-videos"/>
   }
 
