@@ -3,8 +3,14 @@ import * as types from '../constants'
 
 export const WATCH_DETAILS = createRequestTypes('WATCH_DETAILS')
 export const details = {
-  request: (videoId, channelId) => createAction(WATCH_DETAILS[types.REQUEST], { videoId, channelId }),
-  success: response => createAction(WATCH_DETAILS[types.SUCCESS], { response }),
+  request: (videoId, channelId) => createAction(
+    WATCH_DETAILS[types.REQUEST],
+    { videoId, channelId }
+  ),
+  success: (response, videoId) => createAction(
+    WATCH_DETAILS[types.SUCCESS],
+    { response, videoId }
+  ),
   failure: response => createAction(WATCH_DETAILS[types.FAILURE], { response })
 }
 
