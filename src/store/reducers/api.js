@@ -10,6 +10,7 @@ export default function(state = initialState, action) {
       return {
         libraryLoaded: true
       }
+
     default:
       return state
   }

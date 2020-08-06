@@ -11,7 +11,8 @@ import { SEARCH_LIST_RESPONSE, VIDEO_LIST_RESPONSE } from '../api/youtube-respon
 export function* fetchWatchDetails(videoId, channelId) {
   let requests = [
     apiRequest.buildVideoDetailRequest.bind(null, videoId),
-    apiRequest.buildRelatedVideosRequest.bind(null, videoId)
+    apiRequest.buildRelatedVideosRequest.bind(null, videoId),
+    apiRequest.buildCommentThreadRequest.bind(null, videoId)
   ]
 
   if (channelId) {
