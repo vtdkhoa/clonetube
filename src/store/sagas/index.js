@@ -1,13 +1,15 @@
 import { all, call, put, fork } from 'redux-saga/effects'
 import * as videoWatchers from './video'
 import * as watchWatchers from './watch' // Weird naming =))
+import * as commentWatchers from './comment'
 
 export default function* () {
   yield all([
     fork(videoWatchers.watchMostPopularVideos),
     fork(videoWatchers.watchVideoCategories),
     fork(videoWatchers.watchMostPopularVideosByCaterogy),
-    fork(watchWatchers.watchWatchDetails)
+    fork(watchWatchers.watchWatchDetails),
+    fork(commentWatchers.watchCommentThread)
   ])
 }
 
