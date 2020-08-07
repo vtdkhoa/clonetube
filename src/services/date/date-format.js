@@ -1,3 +1,7 @@
+/**
+ * @param {string} dateString
+ * @returns {string} converted date
+ */
 export function formatPublishedAtDateString(dateString) {
   if (!dateString) {
     return ''

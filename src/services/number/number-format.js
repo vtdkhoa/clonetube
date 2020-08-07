@@ -8,7 +8,7 @@ const UNITS = ['K', 'M', 'B', 'T']
 
 /**
  * @param {string} number
- * @returns number => string
+ * @returns {string} converted number
  */
 export function formatNumber(number) {
   const showDecimalPlace = UNITS.some((element, index) => {
