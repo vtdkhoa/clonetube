@@ -1,7 +1,9 @@
 import { SUCCESS } from '../constants'
 import { WATCH_DETAILS } from '../actions/watch'
+import { COMMENT_THREADS } from '../actions/comment'
 import { COMMENT_THREAD_LIST_RESPONSE } from '../api/youtube-response-types'
 import { createSelector } from 'reselect'
+import { getSearchParam } from '../../services/url'
 
 const initialState = {
   byVideo: {},
@@ -12,6 +14,13 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case WATCH_DETAILS[SUCCESS]:
       return reduceWatchDetails(
+        action.response,
+        action.videoId,
+        state
+      )
+
+    case COMMENT_THREADS[SUCCESS]:
+      return reduceCommentThread(
         action.response,
         action.videoId,
         state
@@ -74,7 +83,7 @@ function reduceCommentThread(response, videoId, prevState) {
  * SELECTORS *
  *************
  */
-function getCommentIdsForVideo(state, videoId) {
+const getCommentIdsForVideo = (state, videoId) => {
   const comment = state.comments.byVideo[videoId]
   if (comment) {
     return comment.ids
@@ -87,5 +96,17 @@ export const getCommentsVideo = createSelector(
   state => state.comments.byId,
   (commentIds, allComments) => {
     return commentIds.map(commentId => allComments[commentId])
+  }
+)
+
+const getComment = (state, location) => {
+  const videoId = getSearchParam(location, 'v')
+  return state.comments.byVideo[videoId]
+}
+
+export const getCommentsNextPageToken = createSelector(
+  getComment,
+  comment => {
+    return comment ? comment.nextPageToken : null
   }
 )
