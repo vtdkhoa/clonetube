@@ -4,6 +4,7 @@
   display: flex;
   margin: 8px 0;
   margin-bottom: 20px;
+  line-height: 1.5rem;
 
   .user-image {
     width: $avatar-diameter;
@@ -12,9 +13,19 @@
     flex-shrink: 0;
   }
 
-  .user-name {
-    font-weight: 600;
+  .comment-info {
     margin-bottom: 4px;
+    font-weight: 600;
+
+    #user-name {
+      font-size: 16px;
+    }
+
+    #time-published {
+      margin-left: 5px;
+      display: inline;
+      color: gray;
+    }
   }
 
   .comment-actions {
