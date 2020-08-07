@@ -112,10 +112,6 @@ function reduceFetchMostPopularVideosByCategory(responses, categories, prevState
   }
 }
 
-/**
- * @param {object} response
- * @returns {object, object}: {byId, byCategory}
- */
 function groupVideosByIdAndCategory(response) {
   const videos = response.items
   const byId = {}
@@ -276,8 +272,8 @@ export const getRelatedVideos = createSelector(
   }
 )
 
-export const getChannelId = (state, location, name) => {
-  const videoId = getSearchParam(location, name)
+export const getChannelId = (state, location, suffix) => {
+  const videoId = getSearchParam(location, suffix)
   const video = state.videos.byId[videoId]
   if (video) {
     return video.snippet.channelId

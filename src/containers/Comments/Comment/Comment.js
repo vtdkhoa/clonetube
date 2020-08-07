@@ -33,7 +33,9 @@ const Comment = props => {
       <div>
         <div className="comment-info">
           <span id="user-name">{authorDisplayName}</span>
-          <span id="time-published">{timeAgo.format(commentPublishedAt)}</span>
+          <span id="time-published">
+            {timeAgo.format(commentPublishedAt)}
+          </span>
         </div>
         <span>{textOriginal}</span>
         <div className="comment-actions">

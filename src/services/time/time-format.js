@@ -6,6 +6,7 @@ const pattern = new RegExp(`P(?:${datePattern}(?:${timePattern})?)`)
 
 /**
  * @param {string} duration
+ * @returns {object} { days, hours, minutes, seconds }
  */
 export function formatTime(duration) {
   return duration.match(pattern).slice(1).reduce((prev, next, id) => {
@@ -16,6 +17,7 @@ export function formatTime(duration) {
 
 /**
  * @param {string} videoDuration: follow ISO 8601 (https://vi.wikipedia.org/wiki/ISO_8601)
+ * @returns {string} converted time => 00:00:00
  */
 export function formatVideoDuration(videoDuration) {
   if (!videoDuration || videoDuration === '') {

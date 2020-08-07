@@ -33,9 +33,13 @@ class VideoPreview extends Component {
             </div>
           </div>
           <div className="video-info">
-            <div className="semi-bold show-max-two-lines">{video.snippet.title}</div>
+            <div className="semi-bold show-max-two-lines">
+              {video.snippet.title}
+            </div>
             <div className="video-preview-metadata-container">
-              <div className="channel-title">{video.snippet.channelTitle}</div>
+              <div className="channel-title">
+                {video.snippet.channelTitle}
+              </div>
               <div>
                 <span>{viewCountAndTimeString}</span>
               </div>
