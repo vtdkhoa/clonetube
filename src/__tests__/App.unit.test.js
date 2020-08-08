@@ -5,7 +5,9 @@ import { shallow } from 'enzyme'
 import configureStore from 'redux-mock-store'
 
 const mockStore = configureStore()
-const store = mockStore({})
+const store = mockStore({
+  libraryLoaded: true
+})
 
 describe('App', () => {
   test('renders', () => {
