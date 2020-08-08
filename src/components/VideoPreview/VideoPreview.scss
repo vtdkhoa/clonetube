@@ -19,6 +19,7 @@
 
 .video-preview:hover {
   cursor: pointer;
+  background-color: #ccc;
 }
 
 .image-container {
@@ -45,6 +46,7 @@
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   color: $text-color-dark;
+  padding: 3px;
 
   .video-preview-metadata-container {
     padding-top: 5px;
