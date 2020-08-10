@@ -202,9 +202,11 @@ function reduceVideoDetails(responses, prevState) {
  * SELECTORS *
  *************
  */
+const getMostPopular = state => state.videos.mostPopular
+
 export const getMostPopularVideos = createSelector(
   state => state.videos.byId,
-  state => state.videos.mostPopular,
+  getMostPopular,
   (videosById, mostPopular) => {
     if (!mostPopular || !mostPopular.items) {
       return []
@@ -289,5 +291,20 @@ export const getAmountComments = createSelector(
       return video.statistics.commentCount
     }
     return 0
+  }
+)
+
+export const getMostPopularVidsNextPageToken = createSelector(
+  [getMostPopular],
+  mostPopular => {
+    return mostPopular.nextPageToken
+  }
+)
+
+export const allMostPopularVideosLoaded = createSelector(
+  [getMostPopular],
+  mostPopular => {
+    const amountFetchItems = mostPopular.items ? mostPopular.items.length : 0
+    return amountFetchItems === mostPopular.totalResults
   }
 )

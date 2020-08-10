@@ -31,14 +31,32 @@ describe('VideoPreview', () => {
 
   test('renders vertically', () => {
     const wrapper = shallow(
-      <VideoPreview video={mockUpVideoProps} horizontal={false}/>
+      <VideoPreview
+        video={mockUpVideoProps}
+        horizontal={false}
+      />
     )
     expect(wrapper).toMatchSnapshot()
   })
 
   test('renders horizontally', () => {
     const wrapper = shallow(
-      <VideoPreview video={mockUpVideoProps} horizontal={true}/>
+      <VideoPreview
+        video={mockUpVideoProps}
+        horizontal={true}
+      />
+    )
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  test('renders Trending', () => {
+    const wrapper = shallow(
+      <VideoPreview
+        video={mockUpVideoProps}
+        horizontal={true}
+        expanded={true}
+        description={'some-video-descriptions'}
+      />
     )
     expect(wrapper).toMatchSnapshot()
   })
