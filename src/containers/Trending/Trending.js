@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from 'react'
-import VideoPreview from '../../components/VideoPreview/VideoPreview'
-import SideBar from '../SideBar/SideBar'
-import InfiniteScroll from '../../components/InfiniteScroll/InfiniteScroll'
+import React, { Component } from 'react'
+import VideoList from '../../components/VideoList/VideoList'
 import * as videoActions from '../../store/actions/video'
 import {
   getMostPopularVideos,
@@ -11,7 +9,6 @@ import {
 import { getYoutubeLibraryLoaded } from '../../store/reducers/api'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import './Trending.scss'
 
 class Trending extends Component {
   componentDidMount() {
@@ -30,19 +27,6 @@ class Trending extends Component {
     }
   }
 
-  getVideoPreviews() {
-    return this.props.videos.map(video => (
-      <VideoPreview
-        horizontal={true}
-        expanded={true}
-        video={video}
-        key={video.id}
-        pathname={'/watch'}
-        search={`?v=${video.id}`}
-      />
-    ))
-  }
-
   fetchMoreVideos() {
     if (this.props.youtubeLibraryLoaded && this.props.nextPageToken) {
       this.props.fetchMostPopularVideos(12, true, this.props.nextPageToken)
@@ -54,22 +38,14 @@ class Trending extends Component {
   }
 
   render() {
-    console.log(this.props)
-    const videoPreviews = this.getVideoPreviews()
     const activeLoader = this.shouldShowLoader()
 
     return (
-      <Fragment>
-        <SideBar/>
-        <div className="trending">
-          <InfiniteScroll
-            bottomReachedCallback={this.fetchMoreVideos}
-            showLoader={activeLoader}
-          >
-            {videoPreviews}
-          </InfiniteScroll>
-        </div>
-      </Fragment>
+      <VideoList
+        videos={this.props.videos}
+        bottomReachedCallback={this.fetchMoreVideos}
+        showLoader={activeLoader}
+      />
     )
   }
 }

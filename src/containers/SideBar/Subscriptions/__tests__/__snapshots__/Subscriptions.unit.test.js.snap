@@ -11,15 +11,15 @@ exports[`Subscriptions renders 1`] = `
   />
   <Subscription
     amountNewVideos={10}
-    label="Coursea"
+    label="Academind"
   />
   <Subscription
     amountNewVideos={23}
-    label="TEDx Talks"
+    label="Gearbox Digital"
   />
   <Subscription
     amountNewVideos={4}
-    label="Stanford iOS"
+    label="Udemy"
   />
   <Subscription
     amountNewVideos={114}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Image, TextArea } from 'semantic-ui-react'
 import './AddComment.scss'
 
-const AddComment = props => {
+const AddComment = () => {
   return (
     <div className="add-comment">
       <Image
