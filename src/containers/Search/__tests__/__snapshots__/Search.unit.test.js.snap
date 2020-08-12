@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderNav renders 1`] = `
+exports[`Search renders 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

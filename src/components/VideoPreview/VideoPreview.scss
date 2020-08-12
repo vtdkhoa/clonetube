@@ -62,6 +62,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-weight: 600;
     }
   }
 
@@ -73,7 +74,7 @@
 
   .semi-bold {
     &.expanded {
-      font-weight: 400;
+      font-weight: 500;
       font-size: 1.3rem;
     }
 

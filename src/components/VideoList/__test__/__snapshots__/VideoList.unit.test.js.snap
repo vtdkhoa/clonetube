@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoList renders with videos props 1`] = `
+<Fragment>
+  <SideBar />
+  <div
+    className="video-list"
+  >
+    <InfiniteScroll>
+      <VideoPreview
+        expanded={true}
+        horizontal={true}
+        key="videoId"
+        pathname="/watch"
+        search="?v=videoId"
+        video={
+          Object {
+            "id": "videoId",
+            "snippet": Object {
+              "description": "video description",
+            },
+          }
+        }
+      />
+    </InfiniteScroll>
+  </div>
+</Fragment>
+`;
+
+exports[`VideoList renders without props 1`] = `
+<Fragment>
+  <SideBar />
+  <div
+    className="video-list"
+  >
+    <InfiniteScroll />
+  </div>
+</Fragment>
+`;

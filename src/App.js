@@ -3,6 +3,7 @@ import AppLayout from './components/AppLayout/AppLayout'
 import Home from './containers/Home/Home'
 import Watch from './containers/Watch/Watch'
 import Trending from './containers/Trending/Trending'
+import Search from './containers/Search/Search'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -36,6 +37,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/feed/trending' component={Trending}/>
+          <Route path='/results' render={() => <Search key={this.props.location.key}/>}/>
           <Route path='/watch' render={() => <Watch key={this.props.location.key}/>}/>
         </Switch>
       </AppLayout>
