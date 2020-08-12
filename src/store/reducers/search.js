@@ -1,13 +1,18 @@
 import { SEARCH_FOR_VIDEOS } from '../actions/search'
-import { SUCCESS } from '../constants'
+import { SUCCESS, REQUEST } from '../constants'
 
 export default function(state = {}, action) {
   switch (action.type) {
     case SEARCH_FOR_VIDEOS[SUCCESS]:
       return reduceSearchForVideos(
         action.response,
-        action.searchQuery
+        action.searchQuery,
+        state
       )
+
+    case SEARCH_FOR_VIDEOS[REQUEST]:
+      // delete the previous search element if I don't load more search results for the previous search query
+      return action.nextPageToken ? state : {}
 
     default:
       return state

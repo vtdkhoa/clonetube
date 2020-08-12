@@ -2,7 +2,6 @@ import React from 'react'
 import CommentsHeader from './CommentsHeader/CommentsHeader'
 import AddComment from './AddComment/AddComment'
 import Comment from './Comment/Comment'
-import './Comments.scss'
 
 const Comments = props => {
   if (!props.comments) {
@@ -11,7 +10,7 @@ const Comments = props => {
 
   const showComments = getComments(props.comments)
   return (
-    <div>
+    <div className="comments" style={{ marginTop: 0 }}>
       <CommentsHeader amountComments={props.amountComments}/>
       <AddComment/>
       {showComments}

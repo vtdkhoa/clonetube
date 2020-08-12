@@ -26,6 +26,13 @@ const getVideoPreviews = videos => {
   if (!videos || !videos.length) {
     return null
   }
+
+  // make sure that the videos already have a description
+  const firstVideo = videos[0]
+  if (!firstVideo.snippet.description) {
+    return null
+  }
+
   return videos.map(video => (
     <VideoPreview
       horizontal={true}
@@ -33,7 +40,7 @@ const getVideoPreviews = videos => {
       video={video}
       key={video.id}
       pathname={'/watch'}
-      search={`?=${video.id}`}
+      search={`?v=${video.id}`}
     />
   ))
 }
