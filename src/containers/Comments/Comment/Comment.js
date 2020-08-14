@@ -3,6 +3,7 @@ import { Button, Image } from 'semantic-ui-react'
 import Rating from '../../../components/Rating/Rating'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
+import PropTypes from 'prop-types'
 import './Comment.scss'
 
 TimeAgo.locale(en)
@@ -45,6 +46,10 @@ const Comment = props => {
       </div>
     </div>
   )
+}
+
+Comment.propTypes = {
+  comment: PropTypes.object
 }
 
 export default Comment

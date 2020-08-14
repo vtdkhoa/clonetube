@@ -3,6 +3,7 @@ import VideoGrid from '../../../components/VideoGrid/VideoGrid'
 import InfiniteScroll from '../../../components/InfiniteScroll/InfiniteScroll'
 import { getMostPopularVideos, getVideosByCategory } from '../../../store/reducers/videos'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import './HomeContent.scss'
 
 const AMOUNT_TRENDING_VIDEOS = 12
@@ -56,6 +57,11 @@ const mapStateToProps = state => {
     mostPopularVideos: getMostPopularVideos(state),
     videosByCategory: getVideosByCategory(state)
   }
+}
+
+HomeContent.propTypes = {
+  mostPopularVideos: PropTypes.array,
+  videosByCategory: PropTypes.object
 }
 
 export default connect(mapStateToProps, null)(HomeContent)

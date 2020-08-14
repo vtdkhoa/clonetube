@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import SideBar from '../../containers/SideBar/SideBar'
 import InfiniteScroll from '../InfiniteScroll/InfiniteScroll'
 import VideoPreview from '../VideoPreview/VideoPreview'
+import PropTypes from 'prop-types'
 import './VideoList.scss'
 
 const VideoList = props => {
@@ -39,10 +40,16 @@ const getVideoPreviews = videos => {
       expanded={true}
       video={video}
       key={video.id}
-      pathname={'/watch'}
+      pathname='/watch'
       search={`?v=${video.id}`}
     />
   ))
+}
+
+VideoList.propTypes = {
+  videos: PropTypes.array,
+  bottomReachedCallback: PropTypes.func,
+  showLoader: PropTypes.bool
 }
 
 export default VideoList

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Divider, Icon } from 'semantic-ui-react'
 import Rating from '../Rating/Rating'
+import PropTypes from 'prop-types'
 import './VideoMetadata.scss'
 
 const VideoMetadata = props => {
@@ -36,6 +37,10 @@ const VideoMetadata = props => {
       <Divider/>
     </div>
   )
+}
+
+VideoMetadata.propTypes = {
+  video: PropTypes.object
 }
 
 export default VideoMetadata

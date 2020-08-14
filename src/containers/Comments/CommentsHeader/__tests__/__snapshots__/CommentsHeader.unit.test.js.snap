@@ -5,7 +5,7 @@ exports[`CommentsHeader renders with amountComments = 1000000 1`] = `
   className="comments-header"
 >
   <h4>
-    1000000
+    1.000.000
      Comments
   </h4>
   <Button
@@ -29,6 +29,7 @@ exports[`CommentsHeader renders with amountComments = null 1`] = `
   className="comments-header"
 >
   <h4>
+    NaN
      Comments
   </h4>
   <Button

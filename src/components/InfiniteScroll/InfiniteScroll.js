@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { Loader } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 import './InfiniteScroll.scss'
 
 const InfiniteScroll = props => {
@@ -14,6 +15,11 @@ const InfiniteScroll = props => {
       </Waypoint>
     </Fragment>
   )
+}
+
+InfiniteScroll.propTypes = {
+  bottomReachedCallback: PropTypes.func,
+  showLoader: PropTypes.bool
 }
 
 export default InfiniteScroll

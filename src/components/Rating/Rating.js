@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon, Progress } from 'semantic-ui-react'
 import { formatNumber } from '../../services/number/number-format'
+import PropTypes from 'prop-types'
 import './Rating.scss'
 
 const Rating = props => {
@@ -35,6 +36,11 @@ const Rating = props => {
       {ratingProgress}
     </div>
   )
+}
+
+Rating.propTypes = {
+  likeCount: PropTypes.any,
+  dislikeCount: PropTypes.any
 }
 
 export default Rating

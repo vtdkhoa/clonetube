@@ -1,6 +1,7 @@
 import React from 'react'
 import VideoPreview from '../VideoPreview/VideoPreview'
 import NextUpVideo from './NextUpVideo/NextUpVideo'
+import PropTypes from 'prop-types'
 import './RelatedVideos.scss'
 
 const RelatedVideos = props => {
@@ -27,6 +28,10 @@ const RelatedVideos = props => {
       {relatedVideoPreviews}
     </div>
   )
+}
+
+RelatedVideos.propTypes = {
+  videos: PropTypes.array
 }
 
 export default RelatedVideos

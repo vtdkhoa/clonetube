@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Video.scss'
 
 const BASE_EMBED_URL = 'https://www.youtube.com/embed/'
@@ -22,6 +23,10 @@ const Video = props => {
       </div>
     </div>
   )
+}
+
+Video.propTypes = {
+  id: PropTypes.string
 }
 
 export default Video
