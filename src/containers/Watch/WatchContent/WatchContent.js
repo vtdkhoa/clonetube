@@ -8,7 +8,7 @@ import InfiniteScroll from '../../../components/InfiniteScroll/InfiniteScroll'
 import { connect } from 'react-redux'
 import { getVideoById, getRelatedVideos, getAmountComments } from '../../../store/reducers/videos'
 import { getChannel } from '../../../store/reducers/channels'
-import comments, { getCommentsVideo } from '../../../store/reducers/comments'
+import { getCommentsVideo } from '../../../store/reducers/comments'
 import PropTypes from 'prop-types'
 import './WatchContent.scss'
 
