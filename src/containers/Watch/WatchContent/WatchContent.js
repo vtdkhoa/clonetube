@@ -8,7 +8,8 @@ import InfiniteScroll from '../../../components/InfiniteScroll/InfiniteScroll'
 import { connect } from 'react-redux'
 import { getVideoById, getRelatedVideos, getAmountComments } from '../../../store/reducers/videos'
 import { getChannel } from '../../../store/reducers/channels'
-import { getCommentsVideo } from '../../../store/reducers/comments'
+import comments, { getCommentsVideo } from '../../../store/reducers/comments'
+import PropTypes from 'prop-types'
 import './WatchContent.scss'
 
 class WatchContent extends Component {
@@ -54,6 +55,14 @@ const mapStateToProps = (state, props) => {
     comments: getCommentsVideo(state, props.videoId),
     amountComments: getAmountComments(state, props.videoId)
   }
+}
+
+WatchContent.propTypes = {
+  video: PropTypes.object,
+  relatedVideos: PropTypes.array,
+  channel: PropTypes.object,
+  comments: PropTypes.array,
+  amountComments: PropTypes.any
 }
 
 export default connect(mapStateToProps, null)(WatchContent)

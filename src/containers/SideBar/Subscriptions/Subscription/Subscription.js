@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon, Image, Menu } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 import  './Subscription.scss'
 
 const Subscription = props => {
@@ -23,6 +24,12 @@ const Subscription = props => {
       </div>
     </Menu.Item>
   )
+}
+
+Subscription.propTypes = {
+  label: PropTypes.string,
+  broadcasting: PropTypes.bool,
+  amountNewVideos: PropTypes.number
 }
 
 export default Subscription

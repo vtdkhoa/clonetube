@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon, Menu } from 'semantic-ui-react'
 import { Link, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './SideBarItem.scss'
 
 const SideBarItem = props => {
@@ -28,6 +29,12 @@ const activeItem = propsParam => {
     return pathname === path
   }
   return pathname.includes(path)
+}
+
+SideBarItem.propTypes = {
+  path: PropTypes.string,
+  icon: PropTypes.string,
+  label: PropTypes.string
 }
 
 export default withRouter(SideBarItem)

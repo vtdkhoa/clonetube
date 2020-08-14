@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom'
 import * as searchActions from '../../store/actions/search'
 import { bindActionCreators } from 'redux'
 import { getSearchParam } from '../../services/url'
-
+import PropTypes from 'prop-types'
 
 class Search extends Component {
   componentDidMount() {
@@ -69,6 +69,13 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     searchForVideos
   }, dispatch)
+}
+
+Search.propTypes = {
+  youtubeLibraryLoaded: PropTypes.bool,
+  searchResults: PropTypes.array,
+  nextPageToken: PropTypes.string,
+  searchForVideos: PropTypes.func
 }
 
 export default withRouter(

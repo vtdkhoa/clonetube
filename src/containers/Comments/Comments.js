@@ -2,6 +2,7 @@ import React from 'react'
 import CommentsHeader from './CommentsHeader/CommentsHeader'
 import AddComment from './AddComment/AddComment'
 import Comment from './Comment/Comment'
+import PropTypes from 'prop-types'
 
 const Comments = props => {
   if (!props.comments) {
@@ -25,6 +26,11 @@ const getComments = comments => {
       key={comment.id}
     />
   )
+}
+
+Comments.propTypes = {
+  comments: PropTypes.array,
+  amountComments: PropTypes.any
 }
 
 export default Comments

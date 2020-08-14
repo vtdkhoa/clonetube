@@ -250,7 +250,7 @@ export const videosByCategoryLoaded = createSelector(
   videosByCategory => {
     return Object.keys(videosByCategory || {}).length
   }
-) // => Returns true, if I have some entries in videos.categories object, i.e. if I have already loaded some videos for a specific category
+) // => Returns amount of video categories
 
 export const getVideoById = (state, videoId) => {
   return state.videos.byId[videoId]

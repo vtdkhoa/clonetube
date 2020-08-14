@@ -3,14 +3,12 @@ import { Image, Button, Divider } from 'semantic-ui-react'
 import Linkify from 'react-linkify'
 import { formatPublishedAtDateString } from '../../services/date/date-format'
 import { formatNumber } from '../../services/number/number-format'
+import PropTypes from 'prop-types'
 import './VideoInfoBox.scss'
 
 class VideoInfoBox extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      collapsed: true
-    }
+  state = {
+    collapsed: true
   }
 
   onToggleCollapse = () => {
@@ -103,6 +101,11 @@ class VideoInfoBox extends Component {
       </Fragment>
     )
   }
+}
+
+VideoInfoBox.propTypes = {
+  video: PropTypes.object,
+  channel: PropTypes.object
 }
 
 export default VideoInfoBox

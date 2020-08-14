@@ -5,6 +5,7 @@ import en from 'javascript-time-ago/locale/en'
 import { Link } from 'react-router-dom'
 import { formatNumber } from '../../services/number/number-format'
 import { formatVideoDuration } from '../../services/time/time-format'
+import PropTypes from 'prop-types'
 import './VideoPreview.scss'
 
 TimeAgo.locale(en)
@@ -66,6 +67,14 @@ class VideoPreview extends Component {
 
     return ''
   }
+}
+
+VideoPreview.propTypes = {
+  video: PropTypes.object,
+  horizontal: PropTypes.bool,
+  expanded: PropTypes.bool,
+  pathname: PropTypes.string,
+  search: PropTypes.string
 }
 
 export default VideoPreview

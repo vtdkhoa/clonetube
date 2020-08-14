@@ -9,6 +9,7 @@ import {
 import { getYoutubeLibraryLoaded } from '../../store/reducers/api'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 class Trending extends Component {
   componentDidMount() {
@@ -64,6 +65,14 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchMostPopularVideos
   }, dispatch)
+}
+
+Trending.propTypes = {
+  youtubeLibraryLoaded: PropTypes.bool,
+  videos: PropTypes.array,
+  allVideos: PropTypes.bool,
+  nextPageToken: PropTypes.string,
+  fetchMostPopularVideos: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trending)

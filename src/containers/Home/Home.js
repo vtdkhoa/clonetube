@@ -6,14 +6,12 @@ import { getYoutubeLibraryLoaded } from '../../store/reducers/api'
 import { getVideoCategoryIds, videosByCategoryLoaded, videoCategoriesLoaded } from '../../store/reducers/videos'
 import HomeContent from './HomeContent/HomeContent'
 import SideBar from '../SideBar/SideBar'
+import PropTypes from 'prop-types'
 import './Home.scss'
 
 class Home extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      categoryIndex: 0
-    }
+  state = {
+    categoryIndex: 0
   }
 
   componentDidMount() {
@@ -91,6 +89,16 @@ const mapDispatchToProps = dispatch => {
     fetchVideoCategories,
     fetchMostPopularVideosByCategory
   }, dispatch)
+}
+
+Home.propTypes = {
+  youtubeLibraryLoaded: PropTypes.bool,
+  videoCategories: PropTypes.array,
+  videoCategoriesLoaded: PropTypes.bool,
+  videosByCategoryLoaded: PropTypes.number,
+  fetchMostPopularVideos: PropTypes.func,
+  fetchVideoCategories: PropTypes.func,
+  fetchMostPopularVideosByCategory: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

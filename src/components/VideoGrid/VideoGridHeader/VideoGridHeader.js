@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './VideoGridHeader.scss'
 
 const VideoGridHeader = props => {
@@ -7,6 +8,10 @@ const VideoGridHeader = props => {
       <span className="title">{props.title}</span>
     </div>
   )
+}
+
+VideoGridHeader.propTypes = {
+  title: PropTypes.string
 }
 
 export default VideoGridHeader

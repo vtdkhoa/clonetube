@@ -9,6 +9,7 @@ import { getYoutubeLibraryLoaded } from '../../store/reducers/api'
 import { getSearchParam } from '../../services/url'
 import { getChannelId } from '../../store/reducers/videos'
 import { getCommentsNextPageToken } from '../../store/reducers/comments'
+import PropTypes from 'prop-types'
 
 class Watch extends Component {
   componentDidMount() {
@@ -72,6 +73,14 @@ const mapDispatchToProps = dispatch => {
     fetchWatchDetails,
     fetchCommentThread
   }, dispatch)
+}
+
+Watch.propTypes = {
+  youtubeLibraryLoaded: PropTypes.bool,
+  channelId: PropTypes.string,
+  nextPageToken: PropTypes.string,
+  fetchWatchDetails: PropTypes.func,
+  fetchCommentThread: PropTypes.func
 }
 
 export default withRouter(

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Checkbox, Divider } from 'semantic-ui-react'
 import VideoPreview from '../../VideoPreview/VideoPreview'
+import PropTypes from 'prop-types'
 import './NextUpVideo.scss'
 
 const NextUpVideo = props => {
@@ -15,13 +16,17 @@ const NextUpVideo = props => {
       </div>
       <VideoPreview
         video={props.video}
-        pathname="/watch"
+        pathname='/watch'
         search={`?v=${props.video.id}`}
         horizontal={true}
       />
       <Divider/>
     </Fragment>
   )
+}
+
+NextUpVideo.propTypes = {
+  video: PropTypes.object
 }
 
 export default NextUpVideo
