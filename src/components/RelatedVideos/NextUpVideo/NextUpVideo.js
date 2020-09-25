@@ -4,7 +4,7 @@ import VideoPreview from '../../VideoPreview/VideoPreview'
 import PropTypes from 'prop-types'
 import './NextUpVideo.scss'
 
-const NextUpVideo = props => {
+const NextUpVideo = ({ video }) => {
   return (
     <Fragment>
       <div className="next-up-container">
@@ -15,9 +15,9 @@ const NextUpVideo = props => {
         </div>
       </div>
       <VideoPreview
-        video={props.video}
+        video={video}
         pathname='/watch'
-        search={`?v=${props.video.id}`}
+        search={`?v=${video.id}`}
         horizontal={true}
       />
       <Divider/>

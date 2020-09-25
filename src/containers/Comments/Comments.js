@@ -4,15 +4,15 @@ import AddComment from './AddComment/AddComment'
 import Comment from './Comment/Comment'
 import PropTypes from 'prop-types'
 
-const Comments = props => {
-  if (!props.comments) {
+const Comments = ({ comments, amountComments }) => {
+  if (!comments) {
     return <div/>
   }
 
-  const showComments = getComments(props.comments)
+  const showComments = getComments(comments)
   return (
     <div className="comments" style={{ marginTop: 0 }}>
-      <CommentsHeader amountComments={props.amountComments}/>
+      <CommentsHeader amountComments={amountComments}/>
       <AddComment/>
       {showComments}
     </div>

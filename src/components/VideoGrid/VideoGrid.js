@@ -5,12 +5,12 @@ import { Divider } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import './VideoGrid.scss'
 
-const VideoGrid = props => {
-  if (!props.videos || !props.videos.length) {
+const VideoGrid = ({ videos, title, hideDivider }) => {
+  if (!videos || !videos.length) {
     return <div/>
   }
 
-  const gridItems = props.videos.map(video => {
+  const gridItems = videos.map(video => {
     return (
       <VideoPreview
         video={video}
@@ -20,11 +20,11 @@ const VideoGrid = props => {
       />
     )
   })
-  const divider = props.hideDivider ? null : <Divider/>
+  const divider = hideDivider ? null : <Divider/>
 
   return (
     <Fragment>
-      <VideoGridHeader title={props.title}/>
+      <VideoGridHeader title={title}/>
       <div className="video-grid">
         {gridItems}
       </div>

@@ -4,13 +4,13 @@ import { Loader } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import './InfiniteScroll.scss'
 
-const InfiniteScroll = props => {
+const InfiniteScroll = ({ children, bottomReachedCallback, showLoader }) => {
   return (
     <Fragment>
-      {props.children}
-      <Waypoint onEnter={props.bottomReachedCallback}>
+      {children}
+      <Waypoint onEnter={bottomReachedCallback}>
         <div className="loader-container">
-          <Loader active={props.showLoader} inline="centered"/>
+          <Loader active={showLoader} inline="centered"/>
         </div>
       </Waypoint>
     </Fragment>

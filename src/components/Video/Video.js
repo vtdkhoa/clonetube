@@ -4,10 +4,10 @@ import './Video.scss'
 
 const BASE_EMBED_URL = 'https://www.youtube.com/embed/'
 
-const Video = props => {
-  if (!props.id) return null
+const Video = ({ id }) => {
+  if (!id) return null
 
-  const embedUrl = `${BASE_EMBED_URL}${props.id}`
+  const embedUrl = `${BASE_EMBED_URL}${id}`
 
   return (
     <div className="video-container">
