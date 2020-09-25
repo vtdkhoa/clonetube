@@ -9,12 +9,12 @@ import './Comment.scss'
 TimeAgo.locale(en)
 const timeAgo = new TimeAgo('en-US')
 
-const Comment = props => {
-  if (!props.comment) {
+const Comment = ({ comment }) => {
+  if (!comment) {
     return <div/>
   }
 
-  const topLevelComment = props.comment.snippet.topLevelComment
+  const topLevelComment = comment.snippet.topLevelComment
   const {
     authorDisplayName,
     authorProfileImageUrl,

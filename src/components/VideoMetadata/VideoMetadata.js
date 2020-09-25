@@ -4,9 +4,7 @@ import Rating from '../Rating/Rating'
 import PropTypes from 'prop-types'
 import './VideoMetadata.scss'
 
-const VideoMetadata = props => {
-  const { video } = props
-
+const VideoMetadata = ({ video }) => {
   if (!video || !video.statistics) {
     return <div/>
   }

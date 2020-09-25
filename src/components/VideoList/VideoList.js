@@ -5,16 +5,16 @@ import VideoPreview from '../VideoPreview/VideoPreview'
 import PropTypes from 'prop-types'
 import './VideoList.scss'
 
-const VideoList = props => {
-  const videoPreviews = getVideoPreviews(props.videos)
+const VideoList = ({ videos, bottomReachedCallback, showLoader }) => {
+  const videoPreviews = getVideoPreviews(videos)
 
   return (
     <Fragment>
       <SideBar/>
       <div className="video-list">
         <InfiniteScroll
-          bottomReachedCallback={props.bottomReachedCallback}
-          showLoader={props.showLoader}
+          bottomReachedCallback={bottomReachedCallback}
+          showLoader={showLoader}
         >
           {videoPreviews}
         </InfiniteScroll>

@@ -3,13 +3,13 @@ import { Menu } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import './SideBarHeader.scss'
 
-const SideBarHeader = props => {
-  const heading = props.title ? props.title.toUpperCase() : ''
+const SideBarHeader = ({ title }) => {
+  const header = title ? title.toUpperCase() : ''
 
   return (
     <Menu.Item>
       <Menu.Header className="side-bar-header">
-        {heading}
+        {header}
       </Menu.Header>
     </Menu.Item>
   )

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './VideoGridHeader.scss'
 
-const VideoGridHeader = props => {
+const VideoGridHeader = ({ title }) => {
   return (
     <div className="video-grid-header">
-      <span className="title">{props.title}</span>
+      <span className="title">{title}</span>
     </div>
   )
 }

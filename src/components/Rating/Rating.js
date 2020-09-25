@@ -4,18 +4,18 @@ import { formatNumber } from '../../services/number/number-format'
 import PropTypes from 'prop-types'
 import './Rating.scss'
 
-const Rating = props => {
+const Rating = ({ likeCount, dislikeCount }) => {
   let ratingProgress = null
-  let likeCount = props.likeCount !== 0 ? props.likeCount : null
-  let dislikeCount = null
+  let likeAmount = likeCount !== 0 ? likeCount : null
+  let dislikeAmount = null
 
-  if (props.likeCount && props.dislikeCount) {
-    const amountLikes = parseFloat(props.likeCount)
-    const amountDislikes = parseFloat(props.dislikeCount)
+  if (likeCount && dislikeCount) {
+    const amountLikes = parseFloat(likeCount)
+    const amountDislikes = parseFloat(dislikeCount)
     const ratingPercent = 100.0 * (amountLikes / (amountLikes + amountDislikes))
 
-    likeCount = formatNumber(amountLikes)
-    dislikeCount = formatNumber(amountDislikes)
+    likeAmount = formatNumber(amountLikes)
+    dislikeAmount = formatNumber(amountDislikes)
     ratingProgress = <Progress
       className="progress"
       percent={ratingPercent}
@@ -27,11 +27,11 @@ const Rating = props => {
     <div className="rating">
       <div className="thumbs-up">
         <Icon name="thumbs up outline"/>
-        <span>{likeCount}</span>
+        <span>{likeAmount}</span>
       </div>
       <div className="thumbs-down">
         <Icon name="thumbs down outline"/>
-        <span>{dislikeCount}</span>
+        <span>{dislikeAmount}</span>
       </div>
       {ratingProgress}
     </div>

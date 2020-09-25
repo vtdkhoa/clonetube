@@ -3,9 +3,8 @@ import { Icon, Image, Menu } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import  './Subscription.scss'
 
-const Subscription = props => {
+const Subscription = ({ label, broadcasting, amountNewVideos }) => {
   let rightElement = null
-  const { broadcasting, amountNewVideos } = props
 
   if (broadcasting) {
     rightElement = <Icon name="signal"/>
@@ -18,7 +17,7 @@ const Subscription = props => {
       <div className="subscription">
         <div>
           <Image src="http://via.placeholder.com/28x28" avatar/>
-          <span>{props.label}</span>
+          <span>{label}</span>
         </div>
         {rightElement}
       </div>

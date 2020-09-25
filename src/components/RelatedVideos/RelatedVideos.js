@@ -4,14 +4,14 @@ import NextUpVideo from './NextUpVideo/NextUpVideo'
 import PropTypes from 'prop-types'
 import './RelatedVideos.scss'
 
-const RelatedVideos = props => {
-  if (!props.videos || !props.videos.length) {
+const RelatedVideos = ({ videos }) => {
+  if (!videos || !videos.length) {
     return <div className="related-videos"/>
   }
 
   // no problems, before I check if the array has at least one element
-  const nextUpVideo = props.videos[0]
-  const remainingVideos = props.videos.slice(1)
+  const nextUpVideo = videos[0]
+  const remainingVideos = videos.slice(1)
   const relatedVideoPreviews = remainingVideos.map(relatedVideo => (
     <VideoPreview
       video={relatedVideo}
