@@ -20,7 +20,7 @@ export function formatTime(duration) {
  * @returns {string} converted time => 00:00:00
  */
 export function formatVideoDuration(videoDuration) {
-  if (!videoDuration || videoDuration === '') {
+  if (!videoDuration) {
     return ''
   }
 
