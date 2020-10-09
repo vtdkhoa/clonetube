@@ -125,7 +125,7 @@ function groupVideosByIdAndCategory(response) {
     byId[video.id] = video
     const items = byCategory.items
 
-    if (items && items) {
+    if (items) {
       items.push(video.id)
     } else {
       byCategory.items = [video.id]

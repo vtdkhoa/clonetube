@@ -56,11 +56,11 @@ class Search extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = state => {
   return {
     youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
-    searchResults: getSearchResults(state, props.location.search),
-    nextPageToken: getSearchNextPageToken(state, props.location.search)
+    searchResults: getSearchResults(state),
+    nextPageToken: getSearchNextPageToken(state)
   }
 }
 
